@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="SaaS" targetRuntime="MyBatis3"
+		defaultModelType="flat">
+		<commentGenerator>
+			<property name="suppressDate" value="false" />
+			<!-- 下面一行用于取消注释的生成 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection
+			connectionURL="jdbc:mysql://127.0.0.1:3306/saas_orders?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;serverTimezone=Asia/Shanghai"
+			driverClass="com.mysql.cj.jdbc.Driver" password="root123"
+			userId="root">
+			<property name="nullCatalogMeansCurrent" value="true" />
+		</jdbcConnection>
+		<javaModelGenerator
+			targetPackage="com.qjc.entry"
+			targetProject="SaaS/src/main/java" />
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="SaaS/src/main/resources" />
+		<javaClientGenerator
+			targetPackage="com.qjc.mapper"
+			targetProject="SaaS/src/main/java" type="XMLMAPPER" />
+		<table schema="saas_orders" tableName="sys_order"
+			domainObjectName="SysOrder" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="true" selectByExampleQueryId="false">
+		</table>
+	</context>
+</generatorConfiguration>
